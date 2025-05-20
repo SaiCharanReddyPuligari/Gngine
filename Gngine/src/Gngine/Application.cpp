@@ -1,4 +1,8 @@
+#include "Gpch.h"
 #include "Application.h"
+#include "Gngine/Log.h"
+#include "Gngine/Events/Event.h"
+#include "Events/ApplicationEvent.h"
 
 namespace Gngine {
 	Application::Application() {
@@ -10,8 +14,12 @@ namespace Gngine {
 	}
 
 	void Application::run() {
-		while (true);
 
-		
+		WindowResizeEvent e(1200, 720);
+		Gngine::Log::GetClientLogger()->trace(e.ToString());
+		while (true) {
+
+		}
+
 	}
 }

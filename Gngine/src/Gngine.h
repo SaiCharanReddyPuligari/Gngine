@@ -4,6 +4,7 @@
 
 #include "Gngine/Application.h"
 #include <stdio.h>
+#include "Gngine/Log.h"
 
 //-----ENTRY POINT--------
 #include "Gngine/EntryPoint.h"
