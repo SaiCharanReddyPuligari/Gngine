@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include <Gngine/Log.h>
+
 #ifndef GE_PLATFORM_WINDOWS
 #include <Windows.h>
 #endif // !GE_WINDOWS_APPLICATION

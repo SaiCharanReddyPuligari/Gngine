@@ -21,7 +21,7 @@ class GE_API KeyPressedEvent : public KeyEvent {
 private:
 	int m_repeatcount;
 public:
-	KeyPressedEvent(int keycode, int repeatCount)
+	KeyPressedEvent(int keycode, int repeatCount = 0)
 		: KeyEvent(keycode), m_repeatcount(repeatCount) {
 	}
 

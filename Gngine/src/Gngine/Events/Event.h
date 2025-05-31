@@ -14,7 +14,7 @@ namespace Gngine {
 	    WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
 		KeyPressed, KeyReleased,
-		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
+		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled,
 	};
 
 	enum EventCategory
@@ -71,8 +71,12 @@ namespace Gngine {
 		Event& m_event;
 	};
 
-	inline std::ostream& operator<<(std::ostream& os, const Event& e) {
+	/*inline std::ostream& operator<<(std::ostream& os, const Event& e) {
 
 		return os << e.ToString();
+	}*/
+	inline std::string format_as(const Event& e) {
+		return e.ToString();
 	}
+
 }
