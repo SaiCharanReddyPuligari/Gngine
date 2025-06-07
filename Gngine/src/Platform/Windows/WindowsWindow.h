@@ -1,7 +1,9 @@
 #pragma once
 
-#include "Window.h"
+#include "Gngine/Window.h"
 #include "GLFW/glfw3.h"
+
+struct GLFWwindow;
 
 namespace Gngine {
 	class WindowsWindow : public Window {
@@ -14,7 +16,7 @@ namespace Gngine {
 			unsigned int Width, Height;
 			bool VSync;
 
-				EventCallbackFn EventCallback;
+			EventCallbackFn EventCallback;
 		};
 
 		WindowData m_data;

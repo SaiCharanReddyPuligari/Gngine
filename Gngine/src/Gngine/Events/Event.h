@@ -46,6 +46,9 @@ namespace Gngine {
 		inline bool IsInCategory(EventCategory category) {
 			return GetCategoryFlag() & category;
 		}
+		inline bool Handled() const { 
+			return m_handled; 
+		}
 	protected:
 		bool m_handled = false;
 	};

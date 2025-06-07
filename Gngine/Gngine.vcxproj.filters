@@ -8,10 +8,10 @@
       <UniqueIdentifier>{61C272D8-CD82-EE0E-96BD-378C023D33EB}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform">
-      <UniqueIdentifier>{2cc3b4f3-d30b-4fe8-9b47-08419b2d97d0}</UniqueIdentifier>
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
-      <UniqueIdentifier>{7df6100a-a0ca-45d0-8088-78b7fd81a1cb}</UniqueIdentifier>
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -37,14 +37,20 @@
     <ClInclude Include="src\Gngine\Events\MouseEvent.h">
       <Filter>Gngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Gngine\Layer.h">
+      <Filter>Gngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gngine\LayerStack.h">
+      <Filter>Gngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\Gngine\Log.h">
       <Filter>Gngine</Filter>
     </ClInclude>
-    <ClInclude Include="src\Gpch.h" />
-    <ClInclude Include="Window.h">
+    <ClInclude Include="src\Gngine\Window.h">
       <Filter>Gngine</Filter>
     </ClInclude>
-    <ClInclude Include="WindowsWindow.h">
+    <ClInclude Include="src\Gpch.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
   </ItemGroup>
@@ -52,11 +58,17 @@
     <ClCompile Include="src\Gngine\Application.cpp">
       <Filter>Gngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\Gngine\Layer.cpp">
+      <Filter>Gngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gngine\LayerStack.cpp">
+      <Filter>Gngine</Filter>
+    </ClCompile>
     <ClCompile Include="src\Gngine\Log.cpp">
       <Filter>Gngine</Filter>
     </ClCompile>
     <ClCompile Include="src\Gpch.cpp" />
-    <ClCompile Include="WindowsWindow.cpp">
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
   </ItemGroup>

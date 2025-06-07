@@ -12,7 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (Solution Directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Gngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "Gngine/Vendor/Glad/include"
+
 include "Gngine/vendor/GLFW"
+include "Gngine/vendor/Glad"
 
 
 project "Gngine"
@@ -23,8 +26,8 @@ project "Gngine"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
         
-        pchheader "Gpch.h"
-        pchsource "Gngine/src/hzpch.cpp"
+    pchheader "Gpch.h"
+    pchsource "Gngine/src/Gpch.cpp"
 
 	files
 	{
@@ -36,24 +39,30 @@ project "Gngine"
 	{       
         "%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++23"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
+		buildoptions {
+			"/utf-8"
+		}
 		
 		defines
 		{
 			"GE_PLATFORM_WINDOWS",
-			"GE_BUILD_DLL"
+			"GE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -63,14 +72,29 @@ project "Gngine"
 
 	filter "configurations:Debug"
 		defines "GE_DEBUG"
+		runtime "Debug"
+        buildoptions {
+			"/MDd",
+			"/utf-8"
+		}
 		symbols "On"
      
 	filter "configurations:Release"
 		defines "GE_RELEASE"
+		runtime "Release"
+		buildoptions {
+			"/MD",
+			"/utf-8"
+		}
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "GE_DIST"
+		runtime "Release"
+		buildoptions {
+			"/MD",
+			"/utf-8"
+		}
 		optimize "On"
 
 project "Sandbox"
@@ -102,6 +126,9 @@ project "Sandbox"
 		cppdialect "C++23"
 		staticruntime "On"
 		systemversion "latest"
+		buildoptions{
+			"/utf-8"
+		}
 		
 		defines
 		{

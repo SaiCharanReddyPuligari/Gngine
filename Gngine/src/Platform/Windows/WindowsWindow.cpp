@@ -1,9 +1,10 @@
 #include "Gpch.h"
 #include "WindowsWindow.h"
 #include "Gngine/Log.h"
-#include "src/Gngine/Events/ApplicationEvent.h"
-#include "src/Gngine/Events/KeyEvent.h"
-#include "src/Gngine/Events/MouseEvent.h"
+#include "Gngine/Events/ApplicationEvent.h"
+#include "Gngine/Events/KeyEvent.h"
+#include "Gngine/Events/MouseEvent.h"
+#include <glad/glad.h>
 
 namespace Gngine {
 	static bool s_GLFWInitialized = false;
@@ -44,6 +45,8 @@ namespace Gngine {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		GE_CORE_ASSERT(status, "Failed to initialize GLAD")
 		glfwSetWindowUserPointer(m_Window, &m_data);
 		SetVSync(true);
 

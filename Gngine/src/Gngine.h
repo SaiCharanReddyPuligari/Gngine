@@ -1,11 +1,12 @@
-#pragma once
+#pragma once  
 
-//only used for Gngine applications
+//only used for Gngine applications  
 
-#include "Gngine/Application.h"
-#include <stdio.h>
-#include "Gngine/Log.h"
+#include "Gngine/Application.h"   
+#include "Gngine/LayerStack.h"
+#include <stdio.h>  
+#include "Gngine/Log.h"  
 
-//-----ENTRY POINT--------
-#include "Gngine/EntryPoint.h"
+//-----ENTRY POINT--------  
+#include "Gngine/EntryPoint.h"  
 //-----------------------
